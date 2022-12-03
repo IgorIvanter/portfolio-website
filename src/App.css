@@ -17,7 +17,7 @@
 }
 
 :root {
-	--border-width: 0px;
+	--border-width:0px;
 }
 
 * {
@@ -35,12 +35,17 @@ html {
 }
 
 body {
+	padding-top: 93px;
 	font-weight: 400;
 	position: relative;
 	overflow-x: hidden;
 	background-color: #121212 !important;
 	color: #FFFFFF !important;
 	font-family: 'Centra', sans-serif !important;
+	/* background-image: url("./assets/img/bg4.webp");
+	background-size: cover;
+	background-position-y: -10rem;
+	background-position-x: 0rem; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,6 +69,7 @@ nav.navbar {
 	top: 0;
 	z-index: 9999;
 	transition: 0.32s ease-in-out;
+	border-bottom: 1 px solid #FFFFFF !important;
 }
 
 nav.navbar.scrolled {
@@ -213,7 +219,6 @@ span.navbar-text {
 	background-color: white;
 	margin: 10px 0;
 	display: block;
-
 }
 
 
