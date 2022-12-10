@@ -14,7 +14,8 @@ export default function ProjectCard(props) {
         <div
             style={{
                 width: "100%",
-                height: "100%",
+                height: "15rem",
+                border: "2px solid white"
             }}
             onClick={() => setOpened(true)}>
             {props.children}

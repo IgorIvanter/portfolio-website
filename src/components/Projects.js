@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import ProjectCard from './ProjectCard';
+import german from '../assets/img/german.jpg'
 
 function Projects() {
 
@@ -36,8 +37,7 @@ function Projects() {
                             {...project}
                         >
                             <div className="text-center" style={{
-                                border: "2px solid white",
-                                height: "15rem",
+                                height: "calc(15rem - 4px)",
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center",
@@ -50,6 +50,20 @@ function Projects() {
                                     2048
                                 </span>
                             </div>
+                        </ProjectCard>
+                    </Col>
+                    <Col size={12} sm={6} md={4}>
+
+                        <ProjectCard
+                            name="Online German textbook"
+                            description="This is a free online guide on learning the basics of German. I purposefully didn't use any libraries, just plain HTML and CSS, and that helped me to learn a lot of CSS."
+                            code="https://github.com/IgorIvanter/free-german-course"
+                            site="https://igorivanter.github.io/free-german-course/"
+                        >
+                            <img src={german} alt="" style={{
+                                width: "100%",
+                                maxHeight: "calc(15rem - 4px)"
+                            }}></img>
                         </ProjectCard>
                     </Col>
                 </Row>
