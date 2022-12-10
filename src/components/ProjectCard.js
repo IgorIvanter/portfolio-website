@@ -3,32 +3,6 @@ import { Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 
 
-
-// export default function ProjectModal(props) {
-//     return (
-//         <Modal
-//             {...props}
-//             size="lg"
-//             aria-labelledby="contained-modal-title-vcenter"
-//             centered
-//             contentClassName="ProjectModal"
-//         >
-//             <Modal.Header closeButton>
-//                 <Modal.Title id="contained-modal-title-vcenter">
-//                     {props.name}
-//                 </Modal.Title>
-//             </Modal.Header>
-//             <Modal.Body>
-//                 {props.children}
-//             </Modal.Body>
-//             <Modal.Footer>
-//                 <Button onClick={props.onHide} variant="secondary">Close</Button>
-//             </Modal.Footer>
-//         </Modal>
-//     );
-// }
-
-
 export function ProjectCard(props) {
     const [opened, setOpened] = useState(false)
 
@@ -42,8 +16,7 @@ export function ProjectCard(props) {
                 width: "100%",
                 height: "100%",
             }}
-            onClick={() => setOpened(true)}
-        >
+            onClick={() => setOpened(true)}>
             {props.children}
             <div onClick={e => e.stopPropagation()}>
                 <Modal
@@ -61,7 +34,15 @@ export function ProjectCard(props) {
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        Description
+                        {props.description}
+                        <ul>
+                            <li>
+                                <a target="_blank" rel="noreferrer" href={props.site}>Hosted</a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noreferrer" href={props.code}>Code</a>
+                            </li>
+                        </ul>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button

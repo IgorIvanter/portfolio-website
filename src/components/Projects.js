@@ -32,7 +32,7 @@ function Projects() {
             <Row>
                 <Col size={12} sm={6} md={4}>
                     <ProjectCard
-                        name={project.name} 
+                        {...project}
                     >
                         <div className="text-center" style={{
                             border: "2px solid white",
