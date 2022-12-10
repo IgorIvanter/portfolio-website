@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 
 
-export function ProjectCard(props) {
+export default function ProjectCard(props) {
     const [opened, setOpened] = useState(false)
 
     useEffect(() => {

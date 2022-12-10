@@ -21,10 +21,14 @@ function NavBar() {
         }
     }, [])
 
+    useEffect(() => {
+        console.log(`Scrolled: ${scrolled}`)
+    }, [scrolled])
+
     const updateLink = link => setActiveLink(link)
 
     return (
-        <Navbar bg="dark" expand="lg" className={scrolled && "srolled"}>
+        <Navbar bg="dark" expand="lg" className={scrolled && "scrolled"}>
             <Container>
                 <Navbar.Brand href="#home">Igor Ivanter</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler">
@@ -47,7 +51,7 @@ function NavBar() {
                             Skills
                         </Nav.Link>
                         <Nav.Link
-                            href="#link"
+                            href="#projects"
                             className={activeLink === "projects" ? " active navbar-link" : "navbar-link"}
                             onClick={() => updateLink("projects")}>
                             Projects

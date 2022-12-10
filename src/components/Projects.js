@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { ProjectCard } from './ProjectCard';
+import ProjectCard from './ProjectCard';
 
 function Projects() {
 
@@ -15,44 +15,46 @@ function Projects() {
     const [project] = projects
 
     return (
-        <Container>
-            <Row>
-                <Col>
-                    <h1
-                        className="text-center"
-                        style={{
-                            fontSize: "6rem",
-                            fontWeight: 700,
-                            marginBottom: "3rem",
-                            marginTop: "5rem"
-                        }}>
-                        My Projects</h1>
-                </Col>
-            </Row>
-            <Row>
-                <Col size={12} sm={6} md={4}>
-                    <ProjectCard
-                        {...project}
-                    >
-                        <div className="text-center" style={{
-                            border: "2px solid white",
-                            height: "15rem",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            backgroundColor: "darkslateblue"
-                        }}
-                        >
-                            <span style={{
-                                fontSize: "5rem"
+        <section id="projects">
+            <Container>
+                <Row>
+                    <Col>
+                        <h1
+                            className="text-center"
+                            style={{
+                                fontSize: "6rem",
+                                fontWeight: 700,
+                                marginBottom: "3rem",
+                                marginTop: "5rem"
                             }}>
-                                2048
-                            </span>
-                        </div>
-                    </ProjectCard>
-                </Col>
-            </Row>
-        </Container>
+                            My Projects</h1>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size={12} sm={6} md={4}>
+                        <ProjectCard
+                            {...project}
+                        >
+                            <div className="text-center" style={{
+                                border: "2px solid white",
+                                height: "15rem",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                backgroundColor: "darkslateblue"
+                            }}
+                            >
+                                <span style={{
+                                    fontSize: "5rem"
+                                }}>
+                                    2048
+                                </span>
+                            </div>
+                        </ProjectCard>
+                    </Col>
+                </Row>
+            </Container>
+        </section>
     );
 }
 

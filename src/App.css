@@ -73,8 +73,9 @@ nav.navbar {
 }
 
 nav.navbar.scrolled {
-	padding: 0;
-	background-color: #121212;
+	padding: 0 !important;
+	top: -100% !important;
+	background-color: red;
 }
 
 .navbar-link {
