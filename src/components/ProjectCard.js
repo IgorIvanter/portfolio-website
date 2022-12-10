@@ -20,6 +20,9 @@ export default function ProjectCard(props) {
             }}
             onClick={() => setOpened(true)}>
             {props.children}
+            <h4 className="text-center" style={{
+                margin: "0.5rem 0"
+            }}>{props.name}</h4>
             <div onClick={e => e.stopPropagation()}>
                 <Modal
                     show={opened}
@@ -27,8 +30,7 @@ export default function ProjectCard(props) {
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
-                    contentClassName="ProjectModal"
-                >
+                    contentClassName="ProjectModal">
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
                             {props.name}

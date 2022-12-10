@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import ProjectCard from './ProjectCard';
 import german from '../assets/img/german.jpg'
+import weather from '../assets/img/weather.jpg'
 
 function Projects() {
 
@@ -43,6 +44,19 @@ function Projects() {
                 }}></img>
             }
         },
+        {
+            name: "Weather around the world",
+            description: "This is a weather app. This is my first project where I used React.js and API requests. When you search for a city, only cities with population greater than 0.5M people will be displayed. Information about the weather is from openweathermap API.",
+            code: "https://github.com/IgorIvanter/weather-around-the-world",
+            site: "#",
+            content: () => {
+                return <img src={weather} alt="" style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
+                }}></img>
+            }
+        }
     ]
 
 
