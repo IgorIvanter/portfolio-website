@@ -15,13 +15,13 @@ export default function ProjectCard(props) {
             style={{
                 width: "100%",
                 height: "15rem",
-                border: "2px solid white"
+                border: "2px solid white",
+                margin: "2rem 0"
             }}
             onClick={() => setOpened(true)}>
             {props.children}
             <div onClick={e => e.stopPropagation()}>
                 <Modal
-                    {...props}
                     show={opened}
                     onHide={() => setOpened(false)}
                     size="lg"
