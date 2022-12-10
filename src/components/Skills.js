@@ -11,7 +11,6 @@ import "react-multi-carousel/lib/styles.css";
 
 const responsive = {
     superLargeDesktop: {
-        // the naming can be any, depends on you.
         breakpoint: { max: 4000, min: 3000 },
         items: 5
     },
@@ -32,38 +31,48 @@ const responsive = {
 function Skills() {
     return (
         <section className="skills" id="skills">
+            <h1
+                className="text-center"
+                style={{
+                    fontSize: "6rem",
+                    fontWeight: 700,
+                    marginBottom: "3rem",
+                    marginTop: "5rem"
+                }}>
+                My Skills
+            </h1>
             <Carousel responsive={responsive}
                 style={{
                     color: "white"
                 }}
                 infinite={true}>
-                <div>
+                <div className="logo-box">
                     <img src={html5} alt="" width="400" style={{
                         padding: "1.5rem"
                     }}></img>
                 </div>
-                <div>
+                <div className="logo-box">
                     <img src={css3} alt="" width="400"></img>
                 </div>
-                <div>
+                <div className="logo-box">
                     <img src={js} alt="" width="400" style={{
                         float: "top"
                     }}></img>
                 </div>
-                <div>
+                <div className="logo-box">
                     <img src={react} alt="" width="400"></img>
                 </div>
-                <div>
+                <div className="logo-box">
                     <img src={linux} alt="" width="400" style={{
                         padding: "2rem"
                     }}></img>
                 </div>
-                <div>
+                <div className="logo-box">
                     <img src={cpp} alt="" width="400" style={{
                         padding: "1.5rem"
                     }}></img>
                 </div>
-                <div>
+                <div className="logo-box">
                     <img src={python} alt="" width="400" style={{
                         padding: "2.5rem"
                     }}></img>

@@ -24,7 +24,7 @@ function NavBar() {
     const updateLink = link => setActiveLink(link)
 
     return (
-        <Navbar expand="lg" className={scrolled && "srolled"}>
+        <Navbar bg="dark" expand="lg" className={scrolled && "srolled"}>
             <Container>
                 <Navbar.Brand href="#home">Igor Ivanter</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler">

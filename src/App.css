@@ -221,6 +221,14 @@ span.navbar-text {
 	display: block;
 }
 
+.logo-box {
+	margin: "0 5rem"
+}
+
+.ProjectModal {
+	color: black;
+	background-color: rgb(33, 37, 41);
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
