@@ -66,13 +66,14 @@ function Projects() {
                 <Row>
                     <Col>
                         <h1
-                            className="text-center"
+                            className="text-center section-heading"
                             style={{
                                 fontSize: "6rem",
                                 fontWeight: 700,
                                 marginBottom: "3rem",
                                 marginTop: "5rem"
-                            }}>
+                            }}
+                            >
                             My Projects</h1>
                     </Col>
                 </Row>
