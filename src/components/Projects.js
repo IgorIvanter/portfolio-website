@@ -68,7 +68,7 @@ function Projects() {
                         <h1
                             className="text-center section-heading"
                             style={{
-                                fontSize: "6rem",
+                                fontSize: "3rem",
                                 fontWeight: 700,
                                 marginBottom: "3rem",
                                 marginTop: "5rem"

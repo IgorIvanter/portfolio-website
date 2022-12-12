@@ -28,13 +28,15 @@ const responsive = {
     }
 };
 
+const iconPadding = "5rem"
+
 function Skills() {
     return (
         <section className="skills" id="skills">
             <h1
-                className="text-center"
+                className="text-center section-heading"
                 style={{
-                    fontSize: "6rem",
+                    fontSize: "3rem",
                     fontWeight: 700,
                     marginBottom: "3rem",
                     marginTop: "5rem"
@@ -48,33 +50,38 @@ function Skills() {
                 infinite={true}>
                 <div className="logo-box">
                     <img src={html5} alt="" width="400" style={{
-                        padding: "1.5rem"
+                        padding: "5rem"
                     }}></img>
                 </div>
                 <div className="logo-box">
-                    <img src={css3} alt="" width="400"></img>
+                    <img src={css3} alt="" width="400" style={{
+                        padding: "4rem"
+                    }}></img>
                 </div>
                 <div className="logo-box">
                     <img src={js} alt="" width="400" style={{
-                        float: "top"
-                    }}></img>
-                </div>
-                <div className="logo-box">
-                    <img src={react} alt="" width="400"></img>
-                </div>
-                <div className="logo-box">
-                    <img src={linux} alt="" width="400" style={{
+                        float: "top",
                         padding: "2rem"
                     }}></img>
                 </div>
                 <div className="logo-box">
+                    <img src={react} alt="" width="400" style={{
+                        padding: "5rem"
+                    }}></img>
+                </div>
+                <div className="logo-box">
+                    <img src={linux} alt="" width="400" style={{
+                        padding: "5rem"
+                    }}></img>
+                </div>
+                <div className="logo-box">
                     <img src={cpp} alt="" width="400" style={{
-                        padding: "1.5rem"
+                        padding: "5rem"
                     }}></img>
                 </div>
                 <div className="logo-box">
                     <img src={python} alt="" width="400" style={{
-                        padding: "2.5rem"
+                        padding: "6rem"
                     }}></img>
                 </div>
             </Carousel>

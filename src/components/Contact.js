@@ -41,7 +41,7 @@ function Contact() {
                         }} alt=""></img>
                     </Col>
                     <Col size={12} lg={6} md={12} sm={12}>
-                        <h2 className="text-center">Connect with me</h2>
+                        <h2 className="text-center section-heading">Connect with me</h2>
                         <form>
                             <Row>
                                 <Col size={12} md={6} sm={12}>

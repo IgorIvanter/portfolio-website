@@ -224,9 +224,9 @@ span.navbar-text {
 	background: linear-gradient(to right, rgb(186, 18, 186), rgb(75, 0, 236))
 }
 
-/* #contact div {
-	padding: 0
-} */
+#contact h2 {
+	font-size: 2rem !important;
+}
 
 #contact form input, #contact form textarea {
 	background-color: rgba(255, 255, 255, 0.1);
@@ -254,9 +254,7 @@ span.navbar-text {
 	color: white;
   }
 
-
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+.section-heading {
+	font-size: 3rem !important;
+	font-weight: 700 !important;
 }
