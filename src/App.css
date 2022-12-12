@@ -226,6 +226,7 @@ span.navbar-text {
 
 #contact h2 {
 	font-size: 2rem !important;
+	margin: 2rem 0
 }
 
 #contact form input, #contact form textarea {
@@ -239,6 +240,14 @@ span.navbar-text {
 	color: white;
 	width: 100%;
 	resize: none;
+}
+
+#contact form button {
+	color: black !important;
+	background-color: white;
+	border: 2px solid white;
+	padding: 1rem 2rem !important;
+	margin: 2rem 0;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

@@ -22,8 +22,15 @@ function Contact() {
         })
     }
 
-    const handleSubmit = () => {
-
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        let response = await fetch("https://localhost:5000/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "Application/json;charset=utf-8"
+            },
+            body: JSON.stringify(formDetails)
+        })
     }
 
     return (
@@ -80,6 +87,13 @@ function Contact() {
                                     value={formDetails.message}
                                     placeholder="Your message"
                                     onChange={event => onFormUpdate("message", event.target.value)} />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col className="justify-content-center">
+                                    <button>
+                                        Send!
+                                    </button>
                                 </Col>
                             </Row>
                         </form>
