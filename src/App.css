@@ -42,10 +42,6 @@ body {
 	background-color: #121212 !important;
 	color: #FFFFFF !important;
 	font-family: 'Centra', sans-serif !important;
-	/* background-image: url("./assets/img/bg4.webp");
-	background-size: cover;
-	background-position-y: -10rem;
-	background-position-x: 0rem; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -219,6 +215,44 @@ span.navbar-text {
 	color: black;
 	background-color: rgb(33, 37, 41);
 }
+
+#contact {
+	margin: 5rem 0;
+	padding: 5rem 0;
+	border: 2px solid white;
+	border-radius: 2rem;
+	background: linear-gradient(to right, rgb(186, 18, 186), rgb(75, 0, 236))
+}
+
+/* #contact div {
+	padding: 0
+} */
+
+#contact form input, #contact form textarea {
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	border-radius: 1rem;
+	font-size: 1rem;
+	font-weight: 200 !important;
+	padding: 1rem 2rem;
+	margin: 0.1rem;
+	color: white;
+	width: 100%;
+	resize: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: white;
+	opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+	color: white;
+  }
 
 
 @media (prefers-reduced-motion: no-preference) {

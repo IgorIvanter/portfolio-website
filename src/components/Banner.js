@@ -3,7 +3,6 @@ import headerImg from "../assets/img/header-img.svg"
 import { ArrowRightCircle } from "react-bootstrap-icons"
 
 function Banner() {
-
     return (
         <section className="banner" id="home">
             <Container>
@@ -21,12 +20,13 @@ function Banner() {
                             width: "75%",
                             margin: "auto"
                         }}>
-                            <p>
                             People tell me I need to have some friends, talk to people, go out, etc. They tell me I should sleep sometimes. I don't listen to them: I don't see how those things will help me write code!
-                            </p>
-                            <p>
-                                I am a web developer. Hit me up and we'll build something cool!
-                            </p>
+                        </p>
+                        <p style={{
+                            width: "75%",
+                            margin: "auto"
+                        }}>
+                            I am a web developer. Hit me up and we'll build something cool!
                         </p>
                         <button style={{
                             backgroundColor: "inherit",

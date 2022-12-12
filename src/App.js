@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-// simport { useEffect } from 'react';
 import './App.css';
 import Banner from './components/Banner';
 import NavBar from './components/NavBar';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Contact from './components/Contact';
 
 function App() {
 
@@ -15,6 +15,7 @@ function App() {
 			<Banner />
 			<Skills />
 			<Projects />
+			<Contact />
 		</div>
 	);
 }
