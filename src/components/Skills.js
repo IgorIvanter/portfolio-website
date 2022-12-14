@@ -4,7 +4,7 @@ import css3 from "../assets/img/css3.svg"
 import js from "../assets/img/js.svg"
 import react from "../assets/img/react.svg"
 import python from "../assets/img/python.svg"
-import linux from "../assets/img/linux.svg"
+// import linux from "../assets/img/linux.svg"
 import cpp from "../assets/img/cpp.svg"
 import "react-multi-carousel/lib/styles.css";
 
@@ -28,6 +28,55 @@ const responsive = {
 };
 
 function Skills() {
+    const width = 400
+    const skills = [
+        {
+            name: "HTML",
+            src: html5,
+            style: {
+                padding: "5rem"
+            }
+        },
+        {
+            name: "CSS",
+            src: css3,
+            style: {
+                padding: "4rem"
+            }
+        },
+        {
+            name: "JavaScript",
+            src: js,
+            style: {
+                float: "top",
+                padding: "2rem"
+            }
+        },
+        {
+            name: "React",
+            src: react,
+            style: {
+                padding: "5rem"
+            }
+        },
+        {
+            name: "Python",
+            src: python,
+            style: {
+                padding: "6rem"
+            }
+        },
+        {
+            name: "C++",
+            src: cpp,
+            style: {
+                padding: "5rem"
+            }
+        },
+
+        
+    ]
+
     return (
         <section className="skills" id="skills">
             <h1
@@ -35,8 +84,6 @@ function Skills() {
                 style={{
                     fontSize: "3rem",
                     fontWeight: 700,
-                    marginBottom: "3rem",
-                    marginTop: "5rem"
                 }}>
                 My Skills
             </h1>
@@ -45,42 +92,14 @@ function Skills() {
                     color: "white"
                 }}
                 infinite={true}>
-                <div className="logo-box">
-                    <img src={html5} alt="" width="400" style={{
-                        padding: "5rem"
-                    }}></img>
+                {skills.map(skill => (
+                <div className="logo-box text-center" key={skill.name}>
+                    <img src={skill.src} alt="" width={width} style={skill.style} />
+                    <h3>
+                        {skill.name}
+                        </h3>
                 </div>
-                <div className="logo-box">
-                    <img src={css3} alt="" width="400" style={{
-                        padding: "4rem"
-                    }}></img>
-                </div>
-                <div className="logo-box">
-                    <img src={js} alt="" width="400" style={{
-                        float: "top",
-                        padding: "2rem"
-                    }}></img>
-                </div>
-                <div className="logo-box">
-                    <img src={react} alt="" width="400" style={{
-                        padding: "5rem"
-                    }}></img>
-                </div>
-                <div className="logo-box">
-                    <img src={linux} alt="" width="400" style={{
-                        padding: "5rem"
-                    }}></img>
-                </div>
-                <div className="logo-box">
-                    <img src={cpp} alt="" width="400" style={{
-                        padding: "5rem"
-                    }}></img>
-                </div>
-                <div className="logo-box">
-                    <img src={python} alt="" width="400" style={{
-                        padding: "6rem"
-                    }}></img>
-                </div>
+                ))}
             </Carousel>
         </section>)
 }

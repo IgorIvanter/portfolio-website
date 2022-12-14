@@ -37,10 +37,18 @@ export default function ProjectCard(props) {
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
+                        <h2>Description</h2>
                         {props.description}
+                        <h2 className="project-section-heading">What I learned</h2>
+                        <ul>
+                            {props.learned.map((item, index) => <li key={index}>{item}</li>)}
+                        </ul>
+                        <h2 className="project-section-heading">
+                            Check it out
+                        </h2>
                         <ul>
                             <li>
-                                <a target="_blank" rel="noreferrer" href={props.site}>Hosted</a>
+                                <a target="_blank" rel="noreferrer" href={props.site}>Website</a>
                             </li>
                             <li>
                                 <a target="_blank" rel="noreferrer" href={props.code}>Code</a>

@@ -63,7 +63,7 @@ nav.navbar {
 	position: fixed;
 	width: 100%;
 	top: 0;
-	z-index: 9999;
+	z-index: 99;
 	transition: 0.32s ease-in-out;
 	border-bottom: 1 px solid #FFFFFF !important;
 }
@@ -182,7 +182,6 @@ span.navbar-text {
 	width: 100% !important;
 	height: 100%;
 	content: "";
-	position: "absolute";
 }
 
 .toggler {
@@ -207,13 +206,16 @@ span.navbar-text {
 	display: block;
 }
 
-.logo-box {
-	margin: "0 5rem"
-}
-
 .ProjectModal {
 	color: black;
 	background-color: rgb(33, 37, 41);
+	border: 1px solid rgba(255, 255, 255, 0.2); 
+	position:relative;
+	z-index: 10000
+}
+
+.project-section-heading {
+	margin-top: 1rem
 }
 
 #contact {
