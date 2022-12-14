@@ -3,8 +3,7 @@ import html5 from "../assets/img/html5.svg"
 import css3 from "../assets/img/css3.svg"
 import js from "../assets/img/js.svg"
 import react from "../assets/img/react.svg"
- import python from "../assets/img/python.svg"
- // import git from "../assets/img/git.svg"
+import python from "../assets/img/python.svg"
 import linux from "../assets/img/linux.svg"
 import cpp from "../assets/img/cpp.svg"
 import "react-multi-carousel/lib/styles.css";
@@ -27,8 +26,6 @@ const responsive = {
         items: 1
     }
 };
-
-const iconPadding = "5rem"
 
 function Skills() {
     return (

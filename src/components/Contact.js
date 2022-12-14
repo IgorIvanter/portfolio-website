@@ -1,6 +1,34 @@
-import { Container, Row, Col, Form, Button } from "react-bootstrap"
-import { useState } from "react"
+import { Container, Row, Col, Button, Modal } from "react-bootstrap"
+import { useEffect, useState } from "react"
+import emailjs from "emailjs-com"
 import mailman from "../assets/img/contact-img.svg"
+
+function FormSentMessage(props) {
+    const success = props.success
+    return (
+        <Modal
+            {...props}
+            success=""
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    {success ? "Success!" : "Error"}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <p>
+                    {success ? "Your message has been succesfully sent! I will reach out back as soon as possible." : "Unfortunately, something went wrong... Please try again later OR send me an email to igor.ivanter@gmail.com"}
+                </p>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+        </Modal>
+    );
+}
 
 function Contact() {
     const initialFormDetails = {
@@ -13,7 +41,8 @@ function Contact() {
 
     const [formDetails, setFormDetails] = useState(initialFormDetails)
     const [buttonText, setButtonText] = useState("Send")
-    const [status, setStatus] = useState({})
+    const [modalShow, setModalShow] = useState(false);
+    const [success, setSuccess] = useState(undefined)
 
     const onFormUpdate = (category, value) => {
         setFormDetails({
@@ -22,24 +51,34 @@ function Contact() {
         })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        let response = await fetch("https://localhost:5000/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "Application/json;charset=utf-8"
-            },
-            body: JSON.stringify(formDetails)
-        })
+        console.log("Submitted")
+        setButtonText("Sending...")
+        emailjs.sendForm("default_service", "template_def", "#form", "H83fFGK12wCdLb07P")  // Service ID, template ID, selector and Public Key
+            .then(result => {
+                console.log(result.text)
+                setFormDetails(initialFormDetails)
+                setSuccess(true)
+                setModalShow(true)
+                setButtonText("Send")
+            }, error => {
+                console.log(error.text)
+                setSuccess(false)
+                setModalShow(true)
+                setButtonText("Send")
+            })
     }
+
+    useEffect(() => {
+        console.log(formDetails)
+    }, [formDetails])
 
     return (
         <section className="contact" id="contact">
             <Container>
                 <Row className="align-items-center">
-                    <Col size={12} lg={6} md={12} sm={12} className="justify-content-center text-center" style={{
-                        // padding: "5%"
-                    }}>
+                    <Col size={12} lg={6} md={12} sm={12} className="justify-content-center text-center">
                         <img src={mailman} style={{
                             width: "100%",
                             height: "100%",
@@ -49,10 +88,11 @@ function Contact() {
                     </Col>
                     <Col size={12} lg={6} md={12} sm={12}>
                         <h2 className="text-center section-heading">Connect with me</h2>
-                        <form>
+                        <form onSubmit={handleSubmit} id="form">
                             <Row>
                                 <Col size={12} md={6} sm={12}>
                                     <input
+                                        name="first_name"
                                         type="text"
                                         value={formDetails.firstName}
                                         placeholder="First name"
@@ -60,6 +100,7 @@ function Contact() {
                                 </Col>
                                 <Col size={12} md={6} sm={12}>
                                     <input
+                                        name="last_name"
                                         type="text"
                                         value={formDetails.lastName}
                                         placeholder="Last name"
@@ -67,8 +108,9 @@ function Contact() {
                                 </Col>
                             </Row>
                             <Row>
-                            <Col size={12} md={6} sm={12}>
+                                <Col size={12} md={6} sm={12}>
                                     <input
+                                        name="email"
                                         type="email"
                                         value={formDetails.email}
                                         placeholder="Email address"
@@ -76,6 +118,7 @@ function Contact() {
                                 </Col>
                                 <Col size={12} md={6} sm={12}>
                                     <input
+                                        name="tel"
                                         type="tel"
                                         value={formDetails.phone}
                                         placeholder="Phone number"
@@ -83,23 +126,34 @@ function Contact() {
                                 </Col>
                                 <Col>
                                     <textarea
-                                    row="6"
-                                    value={formDetails.message}
-                                    placeholder="Your message"
-                                    onChange={event => onFormUpdate("message", event.target.value)} />
+                                        name="message"
+                                        row="6"
+                                        value={formDetails.message}
+                                        placeholder="Your message"
+                                        onChange={event => onFormUpdate("message", event.target.value)} />
                                 </Col>
                             </Row>
                             <Row>
                                 <Col className="justify-content-center">
                                     <button>
-                                        Send!
+                                        {buttonText}
                                     </button>
+
                                 </Col>
                             </Row>
                         </form>
                     </Col>
                 </Row>
             </Container>
+            <FormSentMessage
+                success={success}
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                contentClassName="ProjectModal"
+            />
+            {/* <button onClick={() => setModalShow(true)} id="open-modal">
+                Open Modal
+            </button> */}
         </section>
     )
 }
