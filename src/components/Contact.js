@@ -1,7 +1,8 @@
 import { Container, Row, Col, Button, Modal } from "react-bootstrap"
 import { useEffect, useState } from "react"
 import emailjs from "emailjs-com"
-import mailman from "../assets/img/contact-img.svg"
+// import mailman from "../assets/img/contact-img.svg"
+import astronaut from "../assets/img/astronaut.jpg"
 
 function FormSentMessage(props) {
     const success = props.success
@@ -79,15 +80,16 @@ function Contact() {
             <Container>
                 <Row className="align-items-center">
                     <Col size={12} lg={6} md={12} sm={12} className="justify-content-center text-center">
-                        <img src={mailman} style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "contain",
-                            margin: "2rem 0"
+                        <img src={astronaut} style={{
+                            width: "80%"
+                            // width: "100%",
+                            // height: "100%",
+                            // objectFit: "contain",
+                            // margin: "2rem 0"
                         }} alt=""></img>
                     </Col>
                     <Col size={12} lg={6} md={12} sm={12}>
-                        <h2 className="text-center section-heading">Connect with me</h2>
+                        <h2 className="text-center section-heading">Send me a message</h2>
                         <form onSubmit={handleSubmit} id="form">
                             <Row>
                                 <Col size={12} md={6} sm={12}>

@@ -223,12 +223,14 @@ span.navbar-text {
 	padding: 5rem 0;
 	border: 2px solid white;
 	border-radius: 2rem;
-	background: linear-gradient(to right, rgb(186, 18, 186), rgb(75, 0, 236))
+	/* background: linear-gradient(to right, rgb(186, 18, 186), rgb(75, 0, 236)) */
+	background-color: #c6c5ff
 }
 
 #contact h2 {
 	font-size: 2rem !important;
-	margin: 2rem 0
+	margin: 2rem 0;
+	color: white !important;
 }
 
 #contact form input, #contact form textarea {
@@ -239,7 +241,7 @@ span.navbar-text {
 	font-weight: 200 !important;
 	padding: 1rem 2rem;
 	margin: 0.1rem;
-	color: white;
+	color: white !important;
 	width: 100%;
 	resize: none;
 }
