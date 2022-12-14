@@ -267,3 +267,7 @@ span.navbar-text {
 	font-size: 3rem !important;
 	font-weight: 700 !important;
 }
+
+.footer {
+	padding-bottom: 5rem
+}

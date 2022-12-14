@@ -6,7 +6,7 @@ import linkedInIcon from '../assets/img/nav-icon1.svg'
 import facebookIcon from '../assets/img/nav-icon2.svg'
 import instagramIcon from '../assets/img/nav-icon3.svg'
 
-function NavBar() {
+function Header() {
     const [activeLink, setActiveLink] = useState("home")
     const [scrolled, setScrolled] = useState(false)
 
@@ -78,4 +78,4 @@ function NavBar() {
     );
 }
 
-export default NavBar;
+export default Header;
