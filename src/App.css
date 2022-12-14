@@ -271,3 +271,7 @@ span.navbar-text {
 .footer {
 	padding-bottom: 5rem
 }
+
+.social-icon svg path {
+	fill: white
+}
