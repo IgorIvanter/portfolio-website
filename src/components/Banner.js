@@ -28,15 +28,17 @@ function Banner() {
                         }}>
                             I am a web developer. Hit me up and we'll build something cool!
                         </p>
-                        <button style={{
-                            backgroundColor: "inherit",
-                            color: "white",
-                            textDecoration: "underline",
-                            float: "left",
-                            margin: "2rem"
-                        }}>
-                            Let's get in touch <ArrowRightCircle size="1.25rem" />
-                        </button>
+                        <a href="#contact">
+                            <button style={{
+                                backgroundColor: "inherit",
+                                color: "white",
+                                textDecoration: "underline",
+                                float: "left",
+                                margin: "2rem"
+                            }}>
+                                Let's get in touch <ArrowRightCircle size="1.25rem" />
+                            </button>
+                        </a>
                     </Col>
                     <Col xl={5} md={6} xs={12}>
                         <img src={headerImg} alt="" width="75%" id="bg-image" style={{
