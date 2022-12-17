@@ -53,6 +53,15 @@ function Header() {
                             onClick={() => updateLink("projects")}>
                             Projects
                         </Nav.Link>
+                        <Nav.Link
+                            className="navbar-link"
+                            id="page-code"
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://github.com/IgorIvanter/portfolio-website"
+                            >
+                            Code for this site
+                        </Nav.Link>
                     </Nav>
                     <span className="navbar-text">
                         <SocialMediaIcons />

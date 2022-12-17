@@ -279,3 +279,7 @@ span.navbar-text {
 .social-icon svg path {
 	fill: white
 }
+
+#page-code {
+	opacity: 0.5;
+}
