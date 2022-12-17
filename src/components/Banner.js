@@ -20,13 +20,13 @@ function Banner() {
                             width: "75%",
                             margin: "auto"
                         }}>
-                            People tell me I need to have some friends, talk to people, go out, etc. They tell me I should sleep sometimes. I don't listen to them: I don't see how those things will help me write code!
+                            I am a developer specializing in web technologies. Whether you need a website for your online shop, a mobile app, a video game or a missile launching software - I can build it for you. Just hit me up.
                         </p>
                         <p style={{
                             width: "75%",
                             margin: "auto"
                         }}>
-                            I am a web developer. Hit me up and we'll build something cool!
+                            
                         </p>
                         <a href="#contact">
                             <button style={{
