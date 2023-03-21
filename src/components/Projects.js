@@ -2,10 +2,25 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ProjectCard from './ProjectCard';
 import german from '../assets/img/german.jpg'
 import weather from '../assets/img/weather.jpg'
+import genie from '../assets/img/GenieGPT.png'
 
 function Projects() {
 
     const projects = [
+        {
+            name: "GenieGPT",
+            description: "GenieGPT is a Telegram bot designed to bring assistance, entertainment and humor to those who use the popular messaging platform. This bot is powered by the powerful GPT-3.5-turbo AI model from OpenAI. It can understand both written text and voice messages (transcription happens withing a fraction of a second), making it an extremely powerful and practical tool. Genie also has memory, meaning that you can refer to your previous messages, and the bot will understand you. The bot is written in python and hosten on AWS EC2. It can be found by its username: @GenieGPT_AI_bot",
+            learned: ["Telegram API", "python-telegram-bot library", "OpenAI API", "Hosting on AWS EC2"],
+            code: "https://github.com/IgorIvanter/gpt3.5-telegram-chatbot-voice-support",
+            site: "https://t.me/GenieGPT_AI_bot",
+            content: () => {
+                return <img src={genie} alt="" style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
+                }}></img>
+            }
+        },
         {
             name: "Online German textbook",
             description: "This is a website that will teach you the basics of German language (since in this country people don't speak JavaScript). The website consists of two modules: basic and advanced. The lessons provided will help you get the basic grammar and vocabluary fast, so that you can start speaking and having fun after a couple of days. I build this site from scratch, without any CSS library - and I ain't doing this again!:) But it helped me get A LOT more comfortable with CSS.",
