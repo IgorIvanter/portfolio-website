@@ -6,6 +6,7 @@ import react from "../assets/img/react.svg"
 import python from "../assets/img/python.svg"
 // import linux from "../assets/img/linux.svg"
 import cpp from "../assets/img/cpp.svg"
+import jquery from "../assets/img/jquery-2.svg"
 import "react-multi-carousel/lib/styles.css";
 
 const responsive = {
@@ -73,8 +74,14 @@ function Skills() {
                 padding: "5rem"
             }
         },
-
-        
+        {
+            name: "jQuery",
+            src: jquery,
+            style: {
+                padding: "11rem 0rem 9.5rem 4rem",
+                width: "90%"
+            }
+        },
     ]
 
     return (
