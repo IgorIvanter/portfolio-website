@@ -242,6 +242,21 @@ span.navbar-text {
 	.react-multiple-carousel__arrow {
 		z-index: 0 !important;
 	}
+
+	.modal.fade,
+	.modal.fade.show,
+	.modal-backdrop.fade,
+	.modal-backdrop.fade.show {
+	  transition: none !important;
+	  animation: none !important;
+	}
+
+	.modal-dialog-centered {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		min-height: calc(100% - (1.75rem * 2));
+	}
 }
 
 @media (hover: none) and (pointer: coarse) {

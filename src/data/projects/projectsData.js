@@ -49,7 +49,7 @@ export const projects = [
         description: "This is a weather forecast app. It allows you to search for a city (minimum population 0.5M people) and see the current weather there, as well as a forecast for the next 5 days (with an interval of 3 hours). For every timestamp, temperature, wind speed and a weather description (eg. snow, rain, clouds) is available. To build this app I used React. To retrieve information about the weather I used the openweathermap API.",
         learned: ["Basics of React: components, built-in and custom hooks, conditional rendering, context, data flow via props, rendering multiple components using Array.map(), inline styling, JSX and how it's transpiled to JS, etc.", "API requests using 'fetch() function'", "Handling request being sent too often, setting timeout between requests, aborting old requests", "JS Promises", "Extracting React components and functions into separate files", "Working with unix timestampes and Date() object"],
         code: "https://github.com/IgorIvanter/weather-around-the-world",
-        site: "https://igorivanter.github.io/weather-app/",
+        site: "https://igorivanter.github.io/my-weather/",
         content: () => {
             return <img src={weather} alt="" style={{
                 width: "100%",

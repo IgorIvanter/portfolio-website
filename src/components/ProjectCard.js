@@ -34,7 +34,12 @@ export default function ProjectCard(props) {
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
-                    contentClassName="ProjectModal">
+                    contentClassName="ProjectModal"
+                    // style={{
+                    //     animation: 'none',
+                    //     transition: 'none',
+                    //   }}
+                    >
                     <Modal.Header closeButton>
                         <Modal.Title
                             id="contained-modal-title-vcenter"
