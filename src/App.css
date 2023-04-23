@@ -18,6 +18,7 @@
 
 :root {
 	--border-width: 0px;
+	--lightpurple: #c6c5ff;
 }
 
 * {
@@ -218,20 +219,82 @@ span.navbar-text {
 	body {
 		font-size: 1.25rem;
 	}
+
 	.lets-get-in-touch-button {
 		font-size: 1.75rem;
 	}
+
 	.project-modal-button, .close-project-modal-button {
 		font-size: 1.25rem;
 		padding: 0.75rem;
 		border-radius: 0.7rem;
 	}
+
 	.ProjectModal h2 {
 		font-size: 2rem;
 		margin: 1rem 0
 	}
+
 	.button {
 		font-size: 1.5rem;
+	}
+
+	.react-multiple-carousel__arrow {
+		z-index: 0 !important;
+	}
+}
+
+@media (hover: none) and (pointer: coarse) {
+	.social-icon a::before {
+		content: "";
+		display: none;
+		z-index: 1;
+		width: 0px;
+		height: 0px;
+		position: absolute;
+		background-color: transparent;
+		border-radius: 50%;
+		transform: scale(0);
+	}
+	
+	.social-icon a:hover::before {
+		transform: scale(0);
+		display: none;
+	}
+
+	.social-icon > a:hover > img {
+		filter: none;
+	}
+
+	.navbar-text button:hover span {
+		color: white !important;
+	}
+	
+	.navbar-text button:hover::before {
+		display: none;
+		width: 0 !important;
+		height: 0 !important;
+	}
+
+	.navbar-text button::before {
+		content: "";
+		width: 0;
+		height: 0;
+		background-color: #FFFFFF;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		transition: 0s;
+	}
+
+	.project-modal-button:hover {
+		opacity: 1 !important;
+		background-color: var(--bs-primary);
+	}
+
+	.project-modal-button:active {
+		opacity: 1 !important;
+		background-color: var(--bs-primary);
 	}
 }
 
@@ -245,7 +308,7 @@ span.navbar-text {
 	border: 2px solid white;
 	border-radius: 2rem;
 	/* background: linear-gradient(to right, rgb(186, 18, 186), rgb(75, 0, 236)) */
-	background-color: #c6c5ff
+	background-color: var(--lightpurple);
 }
 
 #contact h2 {
