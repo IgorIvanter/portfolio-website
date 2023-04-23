@@ -8,6 +8,9 @@ import python from "../assets/img/python.svg"
 import cpp from "../assets/img/cpp.svg"
 import jquery from "../assets/img/jquery-2.svg"
 import "react-multi-carousel/lib/styles.css";
+import webpack from "../assets/img/webpack.svg"
+import tailwind from "../assets/img/tailwind.svg"
+import wordpress from "../assets/img/wordpress.svg"
 
 const responsive = {
     superLargeDesktop: {
@@ -79,9 +82,31 @@ function Skills() {
             src: jquery,
             style: {
                 padding: "11rem 0rem 9.5rem 4rem",
-                width: "90%"
+                width: "400px",
+                height: "400px"
             }
         },
+        {
+            name: "Webpack",
+            src: webpack,
+            style: {
+                padding: "6rem 6rem 6rem 6rem"
+            }
+        },
+        {
+            name: "Tailwind CSS",
+            src: tailwind,
+            style: {
+                padding: "5rem"
+            }
+        },
+        {
+            name: "WordPress",
+            src: wordpress,
+            style: {
+                padding: "6rem"
+            }
+        }
     ]
 
     return (
