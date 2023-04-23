@@ -36,13 +36,6 @@ export const skillsData = [
         }
     },
     {
-        name: "React",
-        src: react,
-        style: {
-            padding: "5rem"
-        }
-    },
-    {
         name: "Python",
         src: python,
         style: {
@@ -54,6 +47,20 @@ export const skillsData = [
         src: cpp,
         style: {
             padding: "5rem"
+        }
+    },
+    {
+        name: "React",
+        src: react,
+        style: {
+            padding: "5rem"
+        }
+    },
+    {
+        name: "WordPress",
+        src: wordpress,
+        style: {
+            padding: "6rem"
         }
     },
     {
@@ -79,11 +86,5 @@ export const skillsData = [
             padding: "5rem"
         }
     },
-    {
-        name: "WordPress",
-        src: wordpress,
-        style: {
-            padding: "6rem"
-        }
-    }
+
 ]

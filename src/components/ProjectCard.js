@@ -10,6 +10,10 @@ export default function ProjectCard(props) {
         console.log(`New state: ${opened ? "opened" : "closed"}`)
     }, [opened])
 
+    const projectLinkButtonStyle = {
+        margin: "0.5rem 1rem 0.25rem 0"
+    }
+
     return (
         <div
             style={{
@@ -46,14 +50,28 @@ export default function ProjectCard(props) {
                         <h2 className="project-section-heading">
                             Check it out
                         </h2>
-                        <ul>
-                            <li>
-                                <a target="_blank" rel="noreferrer" href={props.site}>Website</a>
-                            </li>
-                            <li>
-                                <a target="_blank" rel="noreferrer" href={props.code}>Code</a>
-                            </li>
-                        </ul>
+                            <a target="_blank" rel="noreferrer" href={props.site}>
+                                <Button
+                                    variant="primary"
+                                    className="project-modal-button"
+                                    style={projectLinkButtonStyle}>
+                                    Website
+                                    {/* <a target="_blank" rel="noreferrer" href={props.site}>
+                                        Website
+                                    </a> */}
+                                </Button>
+                            </a>
+                            <a target="_blank" rel="noreferrer" href={props.code}>
+                                <Button
+                                    variant="primary"
+                                    className="project-modal-button"
+                                    style={projectLinkButtonStyle}>
+                                    {/* <a target="_blank" rel="noreferrer" href={props.code}>
+                                        Code
+                                    </a> */}
+                                    Code
+                                </Button>
+                            </a>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button
