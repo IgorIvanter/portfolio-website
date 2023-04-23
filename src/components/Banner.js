@@ -29,13 +29,15 @@ function Banner() {
                             
                         </p>
                         <a href="#contact">
-                            <button style={{
-                                backgroundColor: "inherit",
-                                color: "white",
-                                textDecoration: "underline",
-                                float: "left",
-                                margin: "2rem"
-                            }}>
+                            <button
+                                className="lets-get-in-touch-button"
+                                style={{
+                                    backgroundColor: "inherit",
+                                    color: "white",
+                                    textDecoration: "underline",
+                                    float: "left",
+                                    margin: "2rem"
+                                }}>
                                 Let's get in touch <ArrowRightCircle size="1.25rem" />
                             </button>
                         </a>

@@ -218,6 +218,9 @@ span.navbar-text {
 	body {
 		font-size: 1.25rem;
 	}
+	.lets-get-in-touch-button {
+		font-size: 1.75rem;
+	}
 	.project-modal-button, .close-project-modal-button {
 		font-size: 1.25rem;
 		padding: 0.75rem;
