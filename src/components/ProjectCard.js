@@ -36,7 +36,11 @@ export default function ProjectCard(props) {
                     centered
                     contentClassName="ProjectModal">
                     <Modal.Header closeButton>
-                        <Modal.Title id="contained-modal-title-vcenter">
+                        <Modal.Title
+                            id="contained-modal-title-vcenter"
+                            style={{
+                                fontSize: "2rem"
+                            }}>
                             {props.name}
                         </Modal.Title>
                     </Modal.Header>
@@ -52,23 +56,19 @@ export default function ProjectCard(props) {
                         </h2>
                             <a target="_blank" rel="noreferrer" href={props.site}>
                                 <Button
+                                    disabled={!props.site}
                                     variant="primary"
                                     className="project-modal-button"
                                     style={projectLinkButtonStyle}>
                                     Website
-                                    {/* <a target="_blank" rel="noreferrer" href={props.site}>
-                                        Website
-                                    </a> */}
                                 </Button>
                             </a>
                             <a target="_blank" rel="noreferrer" href={props.code}>
                                 <Button
+                                    disabled={!props.code}
                                     variant="primary"
                                     className="project-modal-button"
                                     style={projectLinkButtonStyle}>
-                                    {/* <a target="_blank" rel="noreferrer" href={props.code}>
-                                        Code
-                                    </a> */}
                                     Code
                                 </Button>
                             </a>
@@ -79,7 +79,9 @@ export default function ProjectCard(props) {
                                 console.log("click...")
                                 setOpened(false)
                             }}
-                            variant="secondary">
+                            variant="secondary"
+                            className="close-project-modal-button"
+                            >
                             Close
                         </Button>
                     </Modal.Footer>
