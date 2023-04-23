@@ -19,7 +19,7 @@ export const projects = [
     {
         name: "GenieGPT Telegram chatbot",
         description: "GenieGPT is a Telegram bot designed to bring assistance, entertainment and humor to those who use the popular messaging platform. This bot is powered by the powerful GPT-3.5-turbo AI model from OpenAI. It can understand both written text and voice messages (transcription happens withing a fraction of a second), making it an extremely powerful and practical tool. Genie also has memory, meaning that you can refer to your previous messages, and the bot will understand you. The bot is written in python and hosten on AWS EC2. It can be found by its username: @GenieGPT_AI_bot",
-        learned: ["Telegram API", "python-telegram-bot library", "OpenAI API", "Hosting on AWS EC2"],
+        learned: ["Telegram API", "python-telegram-bot library", "using environment variables with a '.env' file", "OpenAI API", "logging in python", "Hosting on AWS EC2"],
         code: "https://github.com/IgorIvanter/gpt3.5-telegram-chatbot-voice-support",
         site: "https://t.me/GenieGPT_AI_bot",
         content: () => {
@@ -45,8 +45,8 @@ export const projects = [
     //     }
     // },
     {
-        name: "Weather around the world",
-        description: "This is a weather app. It allows you to search for a city (minimum population 0.5M people) and see the current weather there, as well as a weather forecast for the next 5 days (with an interval of 3 hours). For every timestamp, temperature, wind speed and a weather description (eg. snow, rain, clouds) is available. To build this app I used React. To retrieve information about the weather I used the openweathermap API.",
+        name: "MyWeather",
+        description: "This is a weather forecast app. It allows you to search for a city (minimum population 0.5M people) and see the current weather there, as well as a forecast for the next 5 days (with an interval of 3 hours). For every timestamp, temperature, wind speed and a weather description (eg. snow, rain, clouds) is available. To build this app I used React. To retrieve information about the weather I used the openweathermap API.",
         learned: ["Basics of React: components, built-in and custom hooks, conditional rendering, context, data flow via props, rendering multiple components using Array.map(), inline styling, JSX and how it's transpiled to JS, etc.", "API requests using 'fetch() function'", "Handling request being sent too often, setting timeout between requests, aborting old requests", "JS Promises", "Extracting React components and functions into separate files", "Working with unix timestampes and Date() object"],
         code: "https://github.com/IgorIvanter/weather-around-the-world",
         site: "https://igorivanter.github.io/weather-app/",
