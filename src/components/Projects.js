@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { projects } from '../projects/projectsData';
+import { projects } from '../data/projects/projectsData';
 import ProjectCard from './ProjectCard';
 
 function Projects() {

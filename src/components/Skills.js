@@ -1,5 +1,5 @@
 import Carousel from "react-multi-carousel";
-import { skillsData } from '../skills/skillsData';
+import { skillsData } from '../data/skills/skillsData';
 
 
 const responsive = {

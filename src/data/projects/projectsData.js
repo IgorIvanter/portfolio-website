@@ -1,6 +1,6 @@
-import weather from '../assets/img/weather.jpg'
-import genie from '../assets/img/GenieGPT.png'
-import gptExtension from '../assets/img/gpt-ext-demo.png'
+import weather from '../../assets/img/weather.jpg'
+import genie from '../../assets/img/GenieGPT.png'
+import gptExtension from '../../assets/img/gpt-ext-demo.png'
 
 export const projects = [
     {
