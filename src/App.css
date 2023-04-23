@@ -245,6 +245,19 @@ span.navbar-text {
 }
 
 @media (hover: none) and (pointer: coarse) {
+	.social-icon a {
+		width: 4rem;
+		height: 4rem;
+		background-color: rgba(217, 217, 217, 0.1);
+		display: inline-flex;
+		border-radius: 50%;
+		margin: 3px;
+		justify-content: center;
+		align-items: center;
+		line-height: 1;
+		border: 1px solid rgba(255, 255, 255, 0.5)
+	}
+
 	.social-icon a::before {
 		content: "";
 		display: none;
@@ -264,6 +277,18 @@ span.navbar-text {
 
 	.social-icon > a:hover > img {
 		filter: none;
+	}
+
+	.navbar-link {
+		font-size: 1.5rem
+	}
+
+	#form input, #form textarea {
+		font-size: 1.25rem !important;
+	}
+
+	.navbar-brand {
+		font-size: 2rem
 	}
 
 	.navbar-text button:hover span {
