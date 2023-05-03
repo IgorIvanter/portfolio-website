@@ -1,8 +1,26 @@
 import weather from '../../assets/img/weather.jpg'
 import genie from '../../assets/img/GenieGPT.png'
 import gptExtension from '../../assets/img/gpt-ext-demo.png'
+import luxusBerlin from '../../assets/img/luxusberlin.png'
 
 export const projects = [
+    {
+        name: "Luxus Berlin",
+        description: "This is an online store I built for a jewelry store Luxus Berlin. This site is built with Shopify. I used a custom theme and heavily modified it to fit the client's needs. The store is currently still in development and will be launched soon, SO PLEASE USE THE PASSWORD 'password' to access the site. Please not that since this is a local buisness, the whole online store is in German.",
+        learned: [
+            "DNS records",
+            "Shopify themes",
+            "Custom CSS in Shopify"
+        ],
+        site: "https://myluxusberlin.com/",
+        content: () => {
+            return <img src={luxusBerlin} alt="" style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover"
+            }}></img>
+        }
+    },
     {
         name: "ChatGPT Prompt Templater",
         description: "This is a Chrome Extension for ChatGPT that provides useful templates for your prompts by modifying the standard UI of the ChatGPT website. It will soon be available on the Chrome Web Store (for now you can see a short video demo by clicking 'website' down below in the 'check it out' section). Please keep in mind that since this is paid project done for a client, the code is private. The extension is written in JavaScript and uses React to render UI, Webpack for bundling, Tailwind CSS for styling and the so called 'headless' WordPress for backend.",
