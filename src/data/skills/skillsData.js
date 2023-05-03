@@ -10,6 +10,7 @@ import "react-multi-carousel/lib/styles.css";
 import webpack from "../../assets/img/webpack.svg"
 import tailwind from "../../assets/img/tailwind.svg"
 import wordpress from "../../assets/img/wordpress.svg"
+import shopify from "../../assets/img/shopify.svg"
 
 
 export const skillsData = [
@@ -50,17 +51,24 @@ export const skillsData = [
         }
     },
     {
-        name: "React",
-        src: react,
-        style: {
-            padding: "5rem"
-        }
-    },
-    {
         name: "WordPress",
         src: wordpress,
         style: {
             padding: "6rem"
+        }
+    },
+    {
+        name: "Shopify",
+        src: shopify,
+        style: {
+            padding: "3.5rem"
+        }
+    },
+    {
+        name: "React",
+        src: react,
+        style: {
+            padding: "5rem"
         }
     },
     {

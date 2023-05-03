@@ -14,13 +14,13 @@ function Banner() {
                             marginBottom: "3rem",
                             marginTop: "5rem"
                         }}>
-                            Hi! I'm Igor.
+                            I get sh## done FAST.
                         </h1>
                         <p style={{
                             width: "75%",
                             margin: "auto"
                         }}>
-                            I am a developer specializing in web technologies. Whether you need a website for your online shop, a mobile app, a video game or a missile launching software - I can build it for you. Just hit me up.
+                            Hi! I'm Igor - a developer specializing in web technologies. Whether you need a website for your online shop, a mobile app, a video game or a missile launching software - I will build it for you. Just hit me up.
                         </p>
                         <p style={{
                             width: "75%",
