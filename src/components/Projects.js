@@ -1,9 +1,15 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { projects } from '../data/projects/projectsData';
 import ProjectCard from './ProjectCard';
+import { useEffect } from 'react';
 
 
 function Projects() {
+    useEffect(() => {
+        console.log("Projects List:")
+        console.log(projects)
+    }, [])
+
     return (
         <section id="projects">
             <Container>
@@ -15,8 +21,7 @@ function Projects() {
                                 fontSize: "3rem",
                                 fontWeight: 700,
                                 marginTop: "3rem"
-                            }}
-                            >
+                            }} >
                             My Projects
                         </h1>
                     </Col>
@@ -25,7 +30,7 @@ function Projects() {
                     {projects.map((project) => (
                         <Col key={project.name} size={12} sm={6} md={4}>
                             <ProjectCard {...project}>
-                                {project.content()}
+                                {/* {project.content()} */}
                             </ProjectCard>
                         </Col>)
                     )}

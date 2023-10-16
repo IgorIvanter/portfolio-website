@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 
 
-export default function ProjectCard(props) {
+export default function ProjectCard({ name, description, learned, site, code, image }) {
     const [opened, setOpened] = useState(false)
 
     useEffect(() => {
@@ -23,10 +23,11 @@ export default function ProjectCard(props) {
                 margin: "2rem 0"
             }}
             onClick={() => setOpened(true)}>
-            {props.children}
+            {/* {props.children} */}
+            <img src={image.src} alt={image.alt} style={image.style} />
             <h4 className="text-center" style={{
                 margin: "0.5rem 0"
-            }}>{props.name}</h4>
+            }}>{name}</h4>
             <div onClick={e => e.stopPropagation()}>
                 <Modal
                     show={opened}
@@ -34,43 +35,38 @@ export default function ProjectCard(props) {
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
-                    contentClassName="ProjectModal"
-                    // style={{
-                    //     animation: 'none',
-                    //     transition: 'none',
-                    //   }}
-                    >
+                    contentClassName="ProjectModal" >
                     <Modal.Header closeButton>
                         <Modal.Title
                             id="contained-modal-title-vcenter"
                             style={{
                                 fontSize: "2rem"
                             }}>
-                            {props.name}
+                            {name}
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <h2>Description</h2>
-                        {props.description}
+                        {description}
                         <h2 className="project-section-heading">What I learned</h2>
                         <ul>
-                            {props.learned.map((item, index) => <li key={index}>{item}</li>)}
+                            {learned.map((item, index) => <li key={index}>{item}</li>)}
                         </ul>
                         <h2 className="project-section-heading">
                             Check it out
                         </h2>
-                            <a target="_blank" rel="noreferrer" href={props.site}>
+                            <a target="_blank" rel="noreferrer" href={site}>
                                 <Button
-                                    disabled={!props.site}
+                                    disabled={!site}
                                     variant="primary"
                                     className="project-modal-button"
                                     style={projectLinkButtonStyle}>
                                     Website
                                 </Button>
                             </a>
-                            <a target="_blank" rel="noreferrer" href={props.code}>
+                            <a target="_blank" rel="noreferrer" href={code}>
                                 <Button
-                                    disabled={!props.code}
+                                    disabled={!code}
                                     variant="primary"
                                     className="project-modal-button"
                                     style={projectLinkButtonStyle}>
