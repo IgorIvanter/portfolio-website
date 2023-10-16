@@ -1,13 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.cd94439e.css",
-    "main.js": "/static/js/main.755d1959.js",
+    "main.js": "/static/js/main.d19ce8df.js",
     "static/js/787.749b4a44.chunk.js": "/static/js/787.749b4a44.chunk.js",
-    "static/media/weather.jpg": "/static/media/weather.7ea034db5f4548bc41cf.jpg",
-    "static/media/luxusberlin.png": "/static/media/luxusberlin.577ad77717c3d551a1d9.png",
     "static/media/astronaut.jpg": "/static/media/astronaut.a499ae25ed40d2c12b28.jpg",
-    "static/media/gpt-ext-demo.png": "/static/media/gpt-ext-demo.7fd65cb0cb8a871750c6.png",
-    "static/media/GenieGPT.png": "/static/media/GenieGPT.10ce671b043f955a997f.png",
     "static/media/header-img.svg": "/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/CentraNo2-Bold.ttf": "/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
@@ -20,11 +16,11 @@
     "index.html": "/index.html",
     "static/media/nav-icon1.svg": "/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
     "main.cd94439e.css.map": "/static/css/main.cd94439e.css.map",
-    "main.755d1959.js.map": "/static/js/main.755d1959.js.map",
+    "main.d19ce8df.js.map": "/static/js/main.d19ce8df.js.map",
     "787.749b4a44.chunk.js.map": "/static/js/787.749b4a44.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd94439e.css",
-    "static/js/main.755d1959.js"
+    "static/js/main.d19ce8df.js"
   ]
 }
