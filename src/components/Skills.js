@@ -1,5 +1,5 @@
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Carousel from "react-multi-carousel";
 import { useEffect, useState } from "react";
 
 
@@ -101,7 +101,9 @@ function Skills() {
     }, [posts])
 
     return (
-        <section className="skills" id="skills">
+        <section
+            className="skills"
+            id="skills" >
             <h1
                 className="text-center section-heading"
                 style={{
@@ -110,20 +112,22 @@ function Skills() {
                 }}>
                 My Skills
             </h1>
-            <Carousel responsive={responsive}
-                style={{
-                    color: "white"
-                }}
-                infinite={true}>
+            <Carousel
+                responsive={responsive}
+                // TODO: export all these inline styles to a separate CSS file
+                style={{ color: "white" }}
+                infinite={true} >
                 {posts.map(post => (
-                <div className="logo-box text-center" key={post.id}>
-                    <img
-                        src={post.featuredImageURL}
-                        style={post.style} 
-                        width={width}
-                        alt="" />
-                    <h3>{post.title}</h3>
-                </div>
+                    <div
+                        key={post.id}
+                        className="logo-box text-center" >
+                        <img
+                            src={post.featuredImageURL}
+                            style={post.style} 
+                            width={width}
+                            alt="" />
+                        <h3>{post.title}</h3>
+                    </div>
                 ))}
             </Carousel>
         </section>)
