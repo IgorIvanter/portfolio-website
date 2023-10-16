@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { useEffect, useState } from "react";
-import { skillsData } from '../data/skills/skillsData';
 
 
 const removeTags = str => {
@@ -95,6 +95,11 @@ function Skills() {
             })
     }, [])
 
+    useEffect(() => {
+        console.log(`\n\nPosts State Change:`)
+        console.log(posts)
+    }, [posts])
+
     return (
         <section className="skills" id="skills">
             <h1
@@ -121,19 +126,6 @@ function Skills() {
                 </div>
                 ))}
             </Carousel>
-            {/* <Carousel responsive={responsive}
-                style={{
-                    color: "white"
-                }}
-                infinite={true}>
-                {posts.map(post => (
-                <div className="logo-box text-center" key={post.name}>
-                    <img src={post.featuredImageURL} alt="" width={width} />
-                    <h3>{post.title}</h3>
-                </div>
-                ))}
-            </Carousel> */}
-
         </section>)
 }
 
