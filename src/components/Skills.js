@@ -1,6 +1,7 @@
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import { useEffect, useState } from "react";
+import config from "../settings/config.json";   // config file containing the GraphQL endpoint
 
 
 const removeTags = str => {
@@ -28,7 +29,6 @@ const responsive = {
 
 function Skills() {
     const width = 400
-
     const [posts, setPosts] = useState([])
 
     // fetching posts from wordpress via GraphQL
@@ -41,7 +41,7 @@ function Skills() {
     // example of a 'good' post content: { "padding": "5rem", margin: "5rem" }
 
     useEffect(() => {
-        const graphqlEndpoint = "https://test.igorivanter.com/graphql"
+        const graphqlEndpoint = config.graphqlEndpoint
         const graphqlQuery = JSON.stringify({
             query: `
                 query {
@@ -77,9 +77,6 @@ function Skills() {
                         data.push({
                             id: node.id,
                             title: node.title,
-                            // styleStringStripped: removeTags(node.content),
-                            // styleStringRaw: node.content,
-
                             // if post content is null, then style is set to an empty object
                             style: node.content ? JSON.parse(removeTags(node.content)) : {},
                             featuredImageURL: node.featuredImage ? node.featuredImage.node.sourceUrl : null
