@@ -1,13 +1,67 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { projects } from '../data/projects/projectsData';
+import { useEffect, useState } from 'react';
+import { removeTags } from '../helpers/helpers';
 import ProjectCard from './ProjectCard';
-import { useEffect } from 'react';
+import config from '../settings/config'
 
 
 function Projects() {
+    const [projects, setProjects] = useState([])
+
     useEffect(() => {
-        console.log("Projects List:")
+        console.log("From Projects.js component: projects state changed to:")
         console.log(projects)
+    }, [projects])
+
+    useEffect(() => {   // fetch projects from GraphQL endpoint
+        const graphqlEndpoint = config.graphqlEndpoint
+        const graphqlQuery = JSON.stringify({
+            query: `
+                query {
+                    projects {
+                        nodes {
+                            id
+                            content
+                            featuredImage {
+                                node {
+                                    sourceUrl
+                                }
+                            }
+                        }
+                    }
+                }`
+        })
+
+        fetch(graphqlEndpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: graphqlQuery
+        })
+        .then(graphqlResponse => graphqlResponse.json())
+        .then(graphqlResponse => {
+            console.log("GraphQL response from Projects.js:")
+            console.log(graphqlResponse)
+            graphqlResponse.data.projects.nodes.forEach(projectNode => {
+                const projectNodeContentJSON = JSON.parse(removeTags(projectNode.content))
+                setProjects(projects => [...projects, 
+                    {
+                        id: projectNode.id,
+                        name: projectNodeContentJSON.name,
+                        description: projectNodeContentJSON.description,
+                        site: projectNodeContentJSON.site,
+                        code: projectNodeContentJSON.code,
+                        learned: projectNodeContentJSON.learned,
+                        image: {
+                            src: projectNode.featuredImage.node.sourceUrl,
+                            alt: projectNode.featuredImage.node.altText,
+                            style: projectNodeContentJSON.style
+                        }
+                    }
+                ])
+            })
+        })
     }, [])
 
     return (
@@ -28,10 +82,8 @@ function Projects() {
                 </Row>
                 <Row>
                     {projects.map((project) => (
-                        <Col key={project.name} size={12} sm={6} md={4}>
-                            <ProjectCard {...project}>
-                                {/* {project.content()} */}
-                            </ProjectCard>
+                        <Col key={project.id} size={12} sm={6} md={4}>
+                            <ProjectCard {...project} />
                         </Col>)
                     )}
                 </Row>

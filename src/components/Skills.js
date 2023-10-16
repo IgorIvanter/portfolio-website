@@ -2,11 +2,8 @@ import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import { useEffect, useState } from "react";
 import config from "../settings/config.json";   // config file containing the GraphQL endpoint
+import { removeTags } from "../helpers/helpers";
 
-
-const removeTags = str => {
-    return str ? str.replace(/(<([^>]+)>)/ig, '').replace(/\n/g, '') : ""
-}
 
 const responsive = {
     superLargeDesktop: {
