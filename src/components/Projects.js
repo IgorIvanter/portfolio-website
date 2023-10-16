@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 
 
 function Projects() {
-    const urlBase = "https://test.igorivanter.com/wp-json/wp/v2/"
 
     // posts to be fetched from wordpress
     const [posts, setPosts] = useState([])
@@ -27,49 +26,51 @@ function Projects() {
     // }, [])
 
     // fetching posts from wordpress via GraphQL
-    useEffect(() => {
-        const graphqlEndpoint = "https://test.igorivanter.com/graphql"
-        const graphqlQuery = JSON.stringify({
-            query: `
-                query {
-                    posts {
-                        nodes {
-                        id
-                        title
-                        featuredImage {
-                        node {
-                            sourceUrl
-                            }
-                        }
-                    }
-                }
-            }`
-        })
+    
+    
+    // useEffect(() => {
+    //     const graphqlEndpoint = "https://test.igorivanter.com/graphql"
+    //     const graphqlQuery = JSON.stringify({
+    //         query: `
+    //             query {
+    //                 posts {
+    //                     nodes {
+    //                     id
+    //                     title
+    //                     featuredImage {
+    //                     node {
+    //                         sourceUrl
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }`
+    //     })
 
-        fetch(graphqlEndpoint, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: graphqlQuery
-        })
-            .then(graphqlResponse => graphqlResponse.json())
-            .then(graphqlResponse => {
-                console.log("GraphQL response:")
-                console.log(graphqlResponse.data.posts.nodes)
-                const data = []
-                graphqlResponse.data.posts.nodes.forEach(node => {
-                    data.push({
-                        id: node.id,
-                        title: node.title,
-                        featuredImageURL: node.featuredImage ? node.featuredImage.node.sourceUrl : null
-                    })
-                })
-                console.log("Data:")
-                console.log(data)
-                setPosts(data)
-            })
-    }, [])
+    //     fetch(graphqlEndpoint, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: graphqlQuery
+    //     })
+    //         .then(graphqlResponse => graphqlResponse.json())
+    //         .then(graphqlResponse => {
+    //             console.log("GraphQL response:")
+    //             console.log(graphqlResponse.data.posts.nodes)
+    //             const data = []
+    //             graphqlResponse.data.posts.nodes.forEach(node => {
+    //                 data.push({
+    //                     id: node.id,
+    //                     title: node.title,
+    //                     featuredImageURL: node.featuredImage ? node.featuredImage.node.sourceUrl : null
+    //                 })
+    //             })
+    //             console.log("Data:")
+    //             console.log(data)
+    //             setPosts(data)
+    //         })
+    // }, [])
 
     return (
         <section id="projects">
@@ -89,10 +90,17 @@ function Projects() {
                     </Col>
                 </Row>
                 <Row>
-                    {posts.map((post) => (
+                    {/* {posts.map((post) => (
                         <Col key={post.id} size={12} sm={6} md={4}>
                             <h1>{post.title}</h1>
                             <img src={post.featuredImageURL}></img>
+                        </Col>)
+                    )} */}
+                    {projects.map((project) => (
+                        <Col key={project.name} size={12} sm={6} md={4}>
+                            <ProjectCard {...project}>
+                                {project.content()}
+                            </ProjectCard>
                         </Col>)
                     )}
                 </Row>

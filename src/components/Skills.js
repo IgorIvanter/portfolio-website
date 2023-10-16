@@ -1,6 +1,11 @@
 import Carousel from "react-multi-carousel";
+import { useEffect, useState } from "react";
 import { skillsData } from '../data/skills/skillsData';
 
+
+const removeTags = str => {
+    return str ? str.replace(/(<([^>]+)>)/ig, '').replace(/\n/g, '') : ""
+}
 
 const responsive = {
     superLargeDesktop: {
@@ -24,6 +29,72 @@ const responsive = {
 function Skills() {
     const width = 400
 
+    const [posts, setPosts] = useState([])
+
+    // fetching posts from wordpress via GraphQL
+
+    // the content of the post is interpreted as a stringified JSON object (no newline 
+    // symbols are allowed, all quotes should be double quoutes, and you should always use the 
+    // "preformatted" formatting option) representing the style 
+    // to be applied to the <img> tag containing the skill SVG icon
+    
+    // example of a 'good' post content: { "padding": "5rem", margin: "5rem" }
+
+    useEffect(() => {
+        const graphqlEndpoint = "https://test.igorivanter.com/graphql"
+        const graphqlQuery = JSON.stringify({
+            query: `
+                query {
+                    posts {
+                        nodes {
+                        id
+                        title
+                        content
+                        featuredImage {
+                        node {
+                            sourceUrl
+                            }
+                        }
+                    }
+                }
+            }`
+        })
+
+        fetch(graphqlEndpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: graphqlQuery
+        })
+            .then(graphqlResponse => graphqlResponse.json())
+            .then(graphqlResponse => {
+                console.log("GraphQL response:")
+                console.log(graphqlResponse.data.posts.nodes)
+                const data = []
+                graphqlResponse.data.posts.nodes.forEach(node => {
+                    try {    
+                        data.push({
+                            id: node.id,
+                            title: node.title,
+                            // styleStringStripped: removeTags(node.content),
+                            // styleStringRaw: node.content,
+
+                            // if post content is null, then style is set to an empty object
+                            style: node.content ? JSON.parse(removeTags(node.content)) : {},
+                            featuredImageURL: node.featuredImage ? node.featuredImage.node.sourceUrl : null
+                        })
+                    } catch (error) {
+                        console.log(`Error parsing JSON object: ${node.title}`)
+                        console.log(error)
+                    }
+                })
+                console.log("Data:")
+                console.log(data)
+                setPosts(data)
+            })
+    }, [])
+
     return (
         <section className="skills" id="skills">
             <h1
@@ -39,15 +110,30 @@ function Skills() {
                     color: "white"
                 }}
                 infinite={true}>
-                {skillsData.map(skill => (
-                <div className="logo-box text-center" key={skill.name}>
-                    <img src={skill.src} alt="" width={width} style={skill.style} />
-                    <h3>
-                        {skill.name}
-                        </h3>
+                {posts.map(post => (
+                <div className="logo-box text-center" key={post.id}>
+                    <img
+                        src={post.featuredImageURL}
+                        style={post.style} 
+                        width={width}
+                        alt="" />
+                    <h3>{post.title}</h3>
                 </div>
                 ))}
             </Carousel>
+            {/* <Carousel responsive={responsive}
+                style={{
+                    color: "white"
+                }}
+                infinite={true}>
+                {posts.map(post => (
+                <div className="logo-box text-center" key={post.name}>
+                    <img src={post.featuredImageURL} alt="" width={width} />
+                    <h3>{post.title}</h3>
+                </div>
+                ))}
+            </Carousel> */}
+
         </section>)
 }
 
