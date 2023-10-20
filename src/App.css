@@ -81,7 +81,7 @@ nav.navbar.scrolled {
 	transition: 0.3s ease-in-out;
 }
 
-.navbar-link:hover, .navbar-link.active {
+.navbar-link:hover {
 	opacity: 1;
 }
 

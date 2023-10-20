@@ -72,7 +72,7 @@ function Header() {
                             href="#skills"
                             className={activeLink === "skills" ? " active navbar-link" : "navbar-link"}
                             onClick={() => {
-                                updateLink("home");
+                                updateLink("skills");
                                 setExpanded(false);
                             }}>
                             Skills
@@ -81,19 +81,10 @@ function Header() {
                             href="#projects"
                             className={activeLink === "projects" ? " active navbar-link" : "navbar-link"}
                             onClick={() => {
-                                updateLink("home");
+                                updateLink("projects");
                                 setExpanded(false);
                             }}>
                             Projects
-                        </Nav.Link>
-                        <Nav.Link
-                            className="navbar-link"
-                            id="page-code"
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://github.com/IgorIvanter/portfolio-website"
-                            >
-                            Code for this site
                         </Nav.Link>
                     </Nav>
                     <span className="navbar-text">
